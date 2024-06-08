@@ -14,7 +14,7 @@ def ollama_client():
 
     goal = ChatOllamaGoal()
     goal.room_name = input("room_name >>> ")
-    goal.request = input("request >>> ")
+    goal.request = str(input("request >>> "))
     goal.is_service = True     # 途中経過状態のメッセージを送って欲しければFalse．返答のみで十分ならTrueで良い
 
     action_client.send_goal(goal)
