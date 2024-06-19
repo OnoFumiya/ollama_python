@@ -1,0 +1,12 @@
+次の指示文をタスク分岐してください。
+指示文「勉強部屋にあるルービックキューブを寝室のベッドで寝ている人に紹介もして渡しておいて」
+---
+START
+1.Navigation(study_room#desk)
+2.Grasp(rubik's_cube)
+3.Navigation(bed_room#bed)
+4.Speak(これらルービックキューブというおもちゃです)
+5.Pass()
+END
+---
+[MEMO]  -- これ以下は読まれないので、お好きにメモしていただいても大丈夫です。

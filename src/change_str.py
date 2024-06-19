@@ -11,7 +11,6 @@ def read_file_and_flatten_text(file_path):
             line = line.replace('\n', '\\n')  # 改行を"\n"に置換
             line = line.replace('\t', '\\t')  # 改行を"\n"に置換
             flattened_text += line
-            # flattened_text += line.strip()  # 行末の改行を削除して、1行の文字列に追加
         return flattened_text
 
 file_path = 'text.txt'

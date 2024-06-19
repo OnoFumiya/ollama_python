@@ -1,0 +1,15 @@
+次の指示文をタスク分岐してください。
+指示文「キッチンのテーブルにあるレモンをリビングのイスに座っている人に渡してから、リビングのテーブルにあるバナナをキッチンのゴミ箱に捨ててください」
+---
+START
+1.Navigation(kitchen#table)
+2.Grasp(lemon)
+3.Navigation(living_room#chair)
+4.Pass()
+5.Navigation(living_room#table)
+6.Grasp(banana)
+7.Navigation(kitchen#trash_box)
+8.Trash()
+END
+---
+[MEMO]  -- これ以下は読まれないので、お好きにメモしていただいても大丈夫です。

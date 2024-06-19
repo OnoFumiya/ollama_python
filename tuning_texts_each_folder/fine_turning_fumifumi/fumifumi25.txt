@@ -1,0 +1,11 @@
+次の指示文をタスク分岐してください。
+指示文「リビングのイスにいる人をキッチンのテーブルまで案内してください」
+---
+START
+1.Navigation(living_room#chair)
+2.Speak(着いてきてください)
+3.Navigation(kitchen#table)
+4.Speak(到着しました)
+END
+---
+[MEMO]  -- これ以下は読まれないので、お好きにメモしていただいても大丈夫です。

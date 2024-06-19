@@ -1,0 +1,11 @@
+次の指示文をタスク分岐してください。
+指示文「キッチンのレモンを、キッチンのゴミ箱に捨てておいてね」
+---
+START
+1.Navigation(kitchen#table)
+2.Grasp(lemon)
+3.Navigation(kitchen#trash_box)
+4.Trash()
+END
+---
+[MEMO]  -- これ以下は読まれないので、お好きにメモしていただいても大丈夫です。

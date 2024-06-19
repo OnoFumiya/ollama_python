@@ -8,3 +8,162 @@ GPSR:     # RoboCupのGPSR競技に特化したチューニング用の部屋。
   - {assistant: "START\n1.DetectObject(banana,[living_room#chair,living_room#table,living_room#trash_box])\n2.Grasp(banana)\n3.Navigation(study_room#desk)\n4.Put()\nFINISH"}
   - {user     : "input text : キッチンのテーブルにあるイチゴを持ってリビングのイスにいる人にこの食べ物が好きかどうか質問してから元の位置に戻しておいてください"}
   - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(strawberry)\n3.Navigation(living_room#chair)\n4.Speak(この食べ物は好きですか？)\n5.Listen()\n6.Navigation(kitchen#table)\n7.Put()\nFINISH"}
+  - {assistant: "START\n1.Navigation(study_room#desk)\n2.Grasp(rubik's_cube)\n3.Navigation(initial_point)\nEND"}  ## ここから
+  - {user     : "input text : リビングのイスに座っている人に明日の天気を聞いてください"}
+  - {assistant: "START\n1.Navigation(living_room#chair)\n2.Speak(明日の天気はなんですか？)\n3.Listen()\nEND"}
+  - {user     : "input text : 私をキッチンのテーブルへ連れていってください"}
+  - {assistant: "START\n1.Speak(私に着いてきてください)\n2.Navigation(kitchen#table)\nEND"}
+  # - {user     : "input text : 勉強部屋の机にあるルービックキューブを持って、勉強部屋のイスに座っている人を追従してから、持っているものを渡してください"}
+  # - {assistant: "START\n1.Navigation(study_room#desk)\n2.Grasp(rubik's_cube)\n3.Navigation(study_room#chair)\n4.Follow()\n5.Pass()\nEND"}
+  # - {user     : "input text : リビングのイスに座っている人を追従してください"}
+  # - {assistant: "START\n1.Navigation(living_room#chair)\n2.Follow()\nEND"}
+  # - {user     : "input text : 勉強部屋の机に置いてあるルービックキューブを勉強部屋の棚にしまってください"}
+  # - {assistant: "START\n1.Navigation(study_room#desk)\n2.Grasp(rubik's_cube)\n3.Navigation(study_room#shelf)\n4.IntoShelf()\nEND"}
+  # - {user     : "input text : いちごが食べたいのでキッチンのテーブルにあるいちごを私に渡して下さい"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(strawberry)\n3.Navigation(initial_point)\n4.Pass()\nEND"}
+  # - {user     : "input text : キッチンのレモンをリビングのテーブルに置いて。"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(lemon)\n3.Navigation(living_room#table)\n4.Put()\nEND"}
+  # - {user     : "input text : バナナを捨ててきてください．"}
+  # - {assistant: "START\n1.Navigation(living_room#table)\n2.Grasp(banana)\n3.Navigation(living_room#trash_box)\n4.Trash()\nEND"}
+  # - {user     : "input text : 玄関へ行き今日も頑張るぞと言って下さい"}
+  # - {assistant: "START\n1.Navigation(entrance)\n2.Speak(今日も頑張るぞ)\nEND"}
+  # - {user     : "input text : リビングのイスにいる人に着いていってください"}
+  # - {assistant: "START\n1.Navigation(living_room#chair)\n2.Follow()\nEND"}
+  # - {user     : "input text : 勉強部屋に行って机の上のルービックキューブを取ってきて戻ってきて私にください。"}
+  # - {assistant: "START\n1.Navigation(study_room#desk)\n2.Grasp(rubik's_cube)\n3.Navigation(initial_point)\n4.Pass()\nEND"}
+  # - {user     : "input text : 寝室へ行き、寝ている人を起こしてください。"}
+  # - {assistant: "START\n1.Navigation(bed_room#bed)\n2.Speak(起きてください。)\nEND"}
+  # - {user     : "input text : リビングのイスにいる人の身長を測ってください"}
+  # - {assistant: "START\n1.Navigation(living_room#chair)\n2.DetectHight()\nEND"}
+  # - {user     : "input text : キッチンのテーブルにあるレモンをリビングのイスに座っている人に渡してから、リビングのテーブルにあるバナナをキッチンのゴミ箱に捨ててください"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(lemon)\n3.Navigation(living_room#chair)\n4.Pass()\n5.Navigation(living_room#table)\n6.Grasp(banana)\n7.Navigation(kitchen#trash_box)\n8.Trash()\nEND"}
+  # - {user     : "input text : お菓子とイチゴを勉強部屋の机まで持ってきてもらえますか？"}
+  # - {assistant: "START\n1.Navigation(living_room#table)\n2.Grasp(snack)\n3.Navigation(study_room#desk)\n4.Put()\n5.Navigation(kitchen#table)\n6.Grasp(strawberry)\n7.Navigation(study_room#desk)\n8.Put()\nEND"}
+  # - {user     : "input text : 寝室ヘ行き、その次にリビングに行ってください。その後キッチンへ行き、勉強部屋に行ってください。最後にここに戻ってくてください。"}
+  # - {assistant: "START\n1.Navigation(bed_room#bed)\n2.Navigattion(living_room#table)\n3.Navigation(kitchen#table)\n4.Navigation(study_room#desk)\n5.Navigation(initial_point)\nEND"}
+  # - {user     : "input text : 勉強部屋にいる人を「玄関までついて来てくださいと言って私のところまで連れてきてください"}
+  # - {assistant: "START\n1.Navigation(study_room#chair)\n2.Speak(玄関までついてきてください)\n3.Navigation(initial_point)\nEND"}
+  # - {user     : "input text : 勉強部屋の机にあるルービックキューブをリビングのゴミ箱に捨てて、リビングのテーブルにあるお菓子を勉強部屋にいる人に渡してください"}
+  # - {assistant: "START\n1.Navigation(study_room#desk)\n2.Grasp(rubik's_cube)\n3.Navigation(living_room#trash_box)\n4.Trash()\n5.Navigation(living_room#table)\n6.Grasp(snack)\n7.Navigation(study_room#chair)\n8.Pass()\nEND"}
+  # - {user     : "input text : リビングにいる人の身長を測ってください"}
+  # - {assistant: "START\n1.Navigation(living_room#chair)\n2.DetectHight()\nEND"}
+  # - {user     : "input text : 私についてきてください．"}
+  # - {assistant: "START\n1.Follow()\nEND"}
+  # - {user     : "input text : キッチンのテーブルに置いてあるイチゴを寝室にいる人に渡してください"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(strawberry)\n3.Navigation(bed_room#bed)\n4.Pass()\nEND"}
+  # - {user     : "input text : 玄関に行ってここはロボットと人間が共生するおうちですと話してください"}
+  # - {assistant: "START\n1.Navigation(entrance)\n2.Speak(ここはロボットと人間が共生するおうちです)\nEND"}
+  # - {user     : "input text : リビングのテーブルに置いてあるコップを勉強部屋の机に置いてください。"}
+  # - {assistant: "START\n1.Navigation(living_room#table)\n2.Grasp(cup)\n3.Navigation(study_room#desk)\n4.Put()\nEND"}
+  # - {user     : "input text : 寝室にいる人間に「起きなさいと伝えなさい．"}
+  # - {assistant: "START\n1.Navigation(bed_room#bed)\n2.Speak(起きなさい)\nEND"}
+  # - {user     : "input text : リビングのテーブルにあるバナナを持ってリビングのイスに座っている人にこれを捨てるねと言ってキッチンのゴミ箱に捨ててください"}
+  # - {assistant: "START\n1.Navigation(living_room#table)\n2.Grasp(banana)\n3.Navigation(living_room#chair)\n4.Speak(これを捨てるね)\n5.Navigation(kitchen#trash_box)\n6.Trash()\nEND"}
+  # - {user     : "input text : キッチンにあるイチゴを、リビングのテーブルに置いてください"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(strawberry)\n3.Navigation(living_room#table)\nPut()\nEND"}
+  # - {user     : "input text : 私をリビングのテーブルまで連れていってください"}
+  # - {assistant: "START\n1.Speak(私に着いてきてください)\n2.Navigation(living_room#table)\n3.Speak(着きました)\nEND"}
+  # - {user     : "input text : リビングのごみ箱をキッチンのゴミ箱にまとめて移してください"}
+  # - {assistant: "START\n1.Navigation(living_room#trash_box)\n2.Grasp()\n3.Navigation(kitchen#trash_box)\n4.Trash()\nEND"}
+  # - {user     : "input text : キッチンのテーブルに置いてあるレモンが欲しいです"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(lemon)\n3.Navigation(initial_point)\n4.Pass()\nEND"}
+  # - {user     : "input text : キッチンにあるレモンを持ってリビングのテーブルに置いといてください。"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(lemon)\n3.Navigation(living_room#table)\n4.Put()\nEND"}
+  # - {user     : "input text : リビングのテーブルにあるコップを持って私に渡したあと私の身長を測って下さい"}
+  # - {assistant: "START\n1.Navigation(living_room#table)\n2.Grasp(cup)\n3.Navigation(initial_point)\n4.Pass()\n5.DetectHight()\nEND"}
+  # - {user     : "input text : 勉強部屋にいる人に「勉強頑張ってと励ましてください。その後、机に置いてあるルービックキューブを勉強部屋の棚に置いて戻ってくてください"}
+  # - {assistant: "START\n1.Navigation(study_room#chair)\n2.Speak(勉強頑張って)\n3.Navigation(study_room#desk)\n4.Grasp(rubik's_cube)\n5.Navigation(study_room#shelf)\n6.Put()\n5.Navigation(initial_point)\nEND"}
+  # - {user     : "input text : 寝室のベッドに寝ている人を起こしてから追従して、そのあと勉強部屋のイスに座ってる人を追従してください"}
+  # - {assistant: "START\n1.Navigation(bed_room#bed)\n2.Speak(起きてください)\n3.Follow()\n4.Navigation(study_room#chair)\n5.Follow()\nEND"}
+  # - {user     : "input text : キッチンにあるリンゴを寝室にいる人に渡して。"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(apple)\n3.Navigation(bed_room#bed)\n4.Pass()\nEND"}
+  # - {user     : "input text : キッチンにあるイチゴを寝室のベッドにいる人に渡してから早く寝るように伝えてください"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(strawberry)\n3.Navigation(bed_room#bed)\n4.Pass()\n5.Speak(早く寝ましょう)\nEND"}
+  # - {user     : "input text : リビングの椅子に座っている人を起立させ，身長を測ってください"}
+  # - {assistant: "START\n1.Navigation(living_room#chair)\n2.Speak(起立してください)\n3.DetectHeight()\nEND"}
+  # - {user     : "input text : リビングのテーブルに置いてあるお菓子を戻ってきて私に渡して。"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(snack)\n3.Navigation(initial_point)\n4.Pass()\nEND"}
+  # - {user     : "input text : 私と一緒にキッチンまで行きましょう"}
+  # - {assistant: "START\n1.Follow()\nEND"}
+  # - {user     : "input text : リビングに行ってテーブルの上のお菓子を取って勉強部屋の棚に片付けてください"}
+  # - {assistant: "START\n1.Navigation(living_room#table)\n2.Grasp(snack)\n3.Navigation(study_room#shelf)\n4.IntoShelf()\nEND"}
+  # - {user     : "input text : キッチンにあるレモンを、寝室のベッドにいる人に渡してください"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(lemon)\n3.Navigation(bed_room#bed)\n4.Pass()\nEND"}
+  # - {user     : "input text : キッチンのテーブルに置いてある梨をリビングにいる人に渡してください。その後に、リビングのテーブルに置いてあるバナナを持ってきて私にください"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(pear)\n3.Navigation(living_room#chair)\n4.Pass()\n5.Navigation(living_room#table)\n6.Grasp(banana)\n7.Navigation(initial_point)\n8.Pass()\nEND"}
+  # - {user     : "input text : リビングにあるコップを持って、勉強部屋の机に置いてください"}
+  # - {assistant: "START\n1.Navigation(living_room#table)\n2.Grasp(cup)\n3.Navigation(study_room#desk)\n4.Put()\nEND"}
+  # - {user     : "input text : 寝室のベッドにいる人に早く寝ましょうと伝えてください"}
+  # - {assistant: "START\n1.Navigation(bed_room#bed)\n2.Speak(早く寝ましょう)\nEND"}
+  # - {user     : "input text : 勉強部屋とリビングと寝室にいる人全員に「玄関に来てくださいと言って玄関に連れてくてください"}
+  # - {assistant: "START\n1.Navigation(study_room#chair)\n2.Speak(玄関に来てください)\n3.Navigation(living_room#chair)\n4.Speak(玄関に来てください)\n5.Navigation(bed_room#bed)\n6.Speak(玄関に来てください)\n7.Navigation(initial_point)\n\nEND"}
+  # - {user     : "input text : リビングの椅子に置いてあるバナナをリビングのゴミ箱に捨ててください。終わったら戻ってきてください"}
+  # - {assistant: "START\n1.Navigation(living_room#chair)\n2.Grasp(banana)\n3.Navigation(living_room#trash_box)\n4.Trash()\n5.Navigation(initial_point)\nEND"}
+  # - {user     : "input text : ルービックキューブを寝室のベッドへ移動してください．"}
+  # - {assistant: "START\n1.Navigation(study_room#desk)\n2.Grasp(rubik's_cube)\n3.Navigation(bed=room#bed\n4.Put()\nEND"}
+  # - {user     : "input text : リビングのテーブルにあるお菓子を持って寝室のベッドで寝ている人に渡してください"}
+  # - {assistant: "START\n1.Navigation(living_room#table)\n2.Grasp(snack)\n3.Navigation(bed_room#bed)\n4.Pass()\nEND"}
+  # - {user     : "input text : 勉強部屋に置いてあるルービックキューブをリビングにいる人に渡してください。"}
+  # - {assistant: "START\n1.Navigation(study_room#desk)\n2.Grasp(rubik's_cube)\n3.Navigation(living_room#chair)\n4.Pass()\nEND"}
+  # - {user     : "input text : リビングのイスに座っている人に名前を聞いてください"}
+  # - {assistant: "START\n1.Navigation(living_room#chair)\n2.Speak(あなたの名前は何ですか？)\n3.Listen()\nEND"}
+  # - {user     : "input text : キッチンのテーブルに置いてあるイチゴを取って近くのゴミ箱に捨ててください。"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(strawberry)\n3.Navigation(kitchen#trash_box)\n4.Trash()\nEND"}
+  # - {user     : "input text : キッチンのレモンを、キッチンのゴミ箱に捨てておいてね"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(lemon)\n3.Navigation(kitchen#trash_box)\n4.Trash()\nEND"}
+  # - {user     : "input text : リビングのテーブルに置いてあるコップを勉強部屋の棚に片付けたら戻ってくてください"}
+  # - {assistant: "START\n1.Navigation(living_room#desk)\n2.Grasp(cup)\n3.Navigation(study_room#shelf)\n4.IntoShelf()\n5.Navigation(initial_point)\nEND"}
+  # - {user     : "input text : リビングのテーブルにあるコップを持って寝室のベッドにいる人に渡したあと昨日はよく寝れましたかと尋ねてください"}
+  # - {assistant: "START\n1.Navigation(living_room#table)\n2.Grasp(cup)\n3.Navigation(bed_room#bed)\n4.Pass()\n5.Speak(昨日はよく眠れましたか？)\n6.Listen()\nEND"}
+  # - {user     : "input text : キッチンのテーブルにあるレモンをリビングのテーブルに置いてリビングのテーブルにあるバナナをキッチンのテーブルに置いてください"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(lemon)\n3.Navigation(living_room#table)\n4.Put()\n5.Grasp(banana)\n6.Navigation(kitchen#table)\n7.Put()\nEND"}
+  # - {user     : "input text : リビングのバナナをキッチンのゴミ箱に捨ててください。"}
+  # - {assistant: "START\n1.Navigation(living_room#table)\n2.Grasp(banana)\n3.Navigation(kitchen#trash_box)\n4.Trash()\nEND"}
+  # - {user     : "input text : リビングのお菓子を、ゴミ箱に捨ててください"}
+  # - {assistant: "START\n1.Navigation(living_room#table)\n2.Grasp(snack)\n3.Navigation(living_room#trash_box)\n4.Trash()\nEND"}
+  # - {user     : "input text : リビングのゴミ箱へ行き異常はありませんと言って次にキッチンのゴミ箱へ行き少しゴミが多いですと言ってください"}
+  # - {assistant: "START\n1.Navigation(living_room#trash_box)\n2.Speak(異常はありません)\n3.Navigation(kitchen#trash_box)\n4.Speak(少しゴミが多いです)\nEND"}
+  # - {user     : "input text : キッチンのテーブルにある梨をリビングのテーブルに置いてください"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(pear)\n3.Navigation(living_room#table)\n4.Put()\nEND"}
+  # - {user     : "input text : 勉強部屋にあるルービックキューブを持って、キッチンのゴミ箱に捨ててください"}
+  # - {assistant: "START\n1.Navigation(study_room#desk)\n2.Grasp(rubik's_cube)\n3.Navigation(kitchen#trash_box)\n4.Trash()\nEND"}
+  # - {user     : "input text : キッチンのテーブルにあるイチゴを持ってリビングのイスにいる人にこの食べ物が好きかどうか質問してから元の位置に戻しておいてください"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(strawberry)\n3.Navigation(living_room#chair)\n4.Speak(この食べ物は好きですか？)\n5.Listen()\n6.Navigation(kitchen#table)\n7.Put()\nEND"}
+  # - {user     : "input text : 勉強部屋に行って机の上のルービックキューブをリビングにいる人に渡して。"}
+  # - {assistant: "START\n1.Navigation(study_room#desk)\n2.Grasp(rubik's_cube)\n3.Navigation(living_room#chair)\n4.Pass()\nEND"}
+  # - {user     : "input text : キッチンのテーブルにあるいちごを持ってリビングのイスに座っている人にイチゴが好きと言ってから渡してください"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(strawberry)\n3.Navigation(living_room#chair)\n4.Speak(私はイチゴが好きです)\n5.Pass()\nEND"}
+  # - {user     : "input text : 勉強部屋に行き椅子に座っている人に「立ち上がってくださいと伝えてください。次に、その人に身長を測ってください。"}
+  # - {assistant: "START\n1.Navigation(study_room#chair)\n2.Speak(立ち上がってください)\n3.DetectHight()\nEND"}
+  # - {user     : "input text : 勉強椅子に座っている人を励ましてください．"}
+  # - {assistant: "START\n1.Navigation(study_room#chair)\n2.Speak(勉強頑張って)\nEND"}
+  # - {user     : "input text : 私の身長を測ってから私に着いてきてください"}
+  # - {assistant: "START\n1.DetectHight()\n2.Follow()\nEND"}
+  # - {user     : "input text : 寝室のベッドで寝ている人を勉強部屋へ行くよう言ってください"}
+  # - {assistant: "START\n1.Navigation(bed_room#bed)\n2.Speak(勉強部屋へ行ってください)\nEND"}
+  # - {user     : "input text : リビングに行ってテーブルの上のバナナをキッチンのテーブルに置いて。"}
+  # - {assistant: "START\n1.Navigation(living_room#table)\n2.Grasp(banana)\n3.Navigation(kitchen#table)\n4.Put()\nEND"}
+  # - {user     : "input text : 寝室で寝ている人を玄関へ連れていってください"}
+  # - {assistant: "START\n1.Navigation(bed_room#bed)\n2.Speak(私に着いてきてください)\n3.Navigation(entrance)\n4.Speak(到着しました)\nEND"}
+  # - {user     : "input text : キッチンにあるナシを勉強部屋にいる人に渡して。"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(pear)\n3.Navigation(study_room#chair)\n4.Pass()\nEND"}
+  # - {user     : "input text : 勉強部屋にあるルービックキューブを寝室のベッドで寝ている人に紹介もして渡しておいて"}
+  # - {assistant: "START\n1.Navigation(study_room#desk)\n2.Grasp(rubik's_cube)\n3.Navigation(bed_room#bed)\n4.Speak(これらルービックキューブというおもちゃです)\n5.Pass()\nEND"}
+  # - {user     : "input text : リビングにあるバナナを持って、勉強部屋の棚に置いてください"}
+  # - {assistant: "START\n1.Navigation(living_room#table)\n2.Grasp(banana)\n3.Navigation(study_room#shelf)\n4.IntoShelf()\nEND"}
+  # - {user     : "input text : キッチンにある梨を、勉強部屋にいる人に渡してください"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(pear)\n3.Navigation(study_room#chair)\n4.Pass()\nEND"}
+  # - {user     : "input text : リビングのイスにいる人をキッチンのテーブルまで案内してください"}
+  # - {assistant: "START\n1.Navigation(living_room#chair)\n2.Speak(着いてきてください)\n3.Navigation(kitchen#table)\n4.Speak(到着しました)\nEND"}
+  # - {user     : "input text : リビングに置いてあるお菓子を勉強部屋の棚にしまっておいて下さい"}
+  # - {assistant: "START\n1.Navigation(living_room#table)\n2.Grasp(snack)\n3.Navigation(study_room#shelf)\n4.IntoShelf()\nEND"}
+  # - {user     : "input text : リビングのテーブルにあるお菓子を勉強部屋の棚に片付けてください"}
+  # - {assistant: "START\n1.Navigation(living_room#table)\n2.Grasp(snack)\n3.Navigation(study_room#shelf)\n4.IntoShelf()\nEND"}
+  # - {user     : "input text : お菓子を勉強部屋の机に置いてきてください．"}
+  # - {assistant: "START\n1.Navigation(living_room#table)\n2.Grasp(snack)\n3.Navigation(study_room#desk)\n4.Put()\nEND"}
+  # - {user     : "input text : キッチンにあるリンゴを持って、勉強部屋の棚に置いてください"}
+  # - {assistant: "START\n1.Navigation(kitchen#table)\n2.Grasp(apple)\n3.Navigation(study_room#shelf)\n4.IntoShelf()\nEND"}
+  # - {user     : "input text : 勉強部屋にいる人と寝室にいる人にリビングへ来るように言ってください"}
+  # - {assistant: "START\n1.Navigation(study_room#chair)\n2.Speak(リビングへ来てください)\n3.Navigation(bed_room#bed)\n4.Speak(リビングへ来てください)\nEND"}
+  # - {user     : "input text : 勉強部屋にいる人に、寝室へ行くよう伝えてください"}
+  # - {assistant: "START\n1.Navigation(study_room#chair)\n2.Speak(寝室へ行ってください)\n3.\nEND"}

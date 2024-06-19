@@ -1,0 +1,12 @@
+次の指示文をタスク分岐してください。
+指示文「リビングのテーブルにあるコップを持って私に渡したあと私の身長を測って下さい」
+---
+START
+1.Navigation(living_room#table)
+2.Grasp(cup)
+3.Navigation(initial_point)
+4.Pass()
+5.DetectHight()
+END
+---
+[MEMO]  -- これ以下は読まれないので、お好きにメモしていただいても大丈夫です。
