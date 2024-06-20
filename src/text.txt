@@ -19,6 +19,7 @@ The environmental conditions in which the robot exists are as follows:
 		- study_room : study room. This is not point, but this is area.
 			- study_room#desk : desk in the study room
 			- study_room#chair : chair in the study room
+			- study_room#shelf : shelf in the study room
 
 	object_name list
 		- snack
@@ -32,9 +33,6 @@ The environmental conditions in which the robot exists are as follows:
 
 	location information of humans
 		- I am inital_point.
-		- There is a person sitting on the chair in the living room.
-		- There is a person sitting on the chair in the study room.
-		- There is a person lying on the bed in the bedroom.
 
 The robot's skill list includes
 	- Navigation(location_name) : The robot goes to the location_name.
@@ -46,10 +44,15 @@ The robot's skill list includes
 	- IntoShelf() : The robot puts away the object it is holding onto the shelf in front of it.
 	- Pass() : The robot hands the object it is holding to the person in front of it.
 	- Trash() : The robot throws the object it is holding into the trash can in front of it.
+	- Follow() : The robot follows the person in front of it.
+	- Answer() : The robot answers the questions of the person in front of it.
+	- SerchHumanFeature() : The robot measures the characteristics of the person in front of it.
 
 Information about robots:
+	- The robot's name is SOBIT PRO.
 	- The robot has one arm.
-	- The robot are currently at inital_point.
+	- The robot are currently at inital_point and returns to inital_point every time.
+	- Today is June 9th.
 
 
 The output must be given in the following syntax:
