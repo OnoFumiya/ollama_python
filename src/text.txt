@@ -13,9 +13,9 @@ The environmental conditions in which the robot exists are as follows:
 		- kitchen : kitchen. This is not point, but this is area.
 			- kitchen#table : table in the kitchen
 			- kitchen#trash_box : trash box in the kitchen
-		- bed_room : bed room. This is not point, but this is area.
-			- bed_room#bed : bed in the bedroom
-			- bed_room#tree : tree in the bedroom
+		- bedroom : bed room. This is not point, but this is area.
+			- bedroom#bed : bed in the bedroom
+			- bedroom#tree : tree in the bedroom
 		- study_room : study room. This is not point, but this is area.
 			- study_room#desk : desk in the study room
 			- study_room#chair : chair in the study room
